@@ -37,14 +37,11 @@
 }
 
 .header-name {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
   font-size: 1.2em;
   font-weight: bold;
   color: #ffffff;
   text-shadow: 0 0 10px #ff0;
+  margin-top: 0.5em;
 }
 
 .logo-box {
@@ -61,6 +58,11 @@
   border: 2px solid yellow;
 }
 
+.profile-section {
+  text-align: center;
+  margin-top: 1em;
+}
+
 .profile-pic {
   height: 100px;
   width: 100px;
@@ -68,7 +70,6 @@
   border: 3px solid white;
   object-fit: cover;
   box-shadow: 0 0 15px white;
-  margin-top: 1em;
 }
 
 .quote {
@@ -165,9 +166,11 @@ footer {
 </head>
 <body>
   <div class="top-section">
-    <div class="header-name">MD. Shamsheer Alam</div>
     <div class="logo-box">Solution Wallah</div>
-    <img src="https://drive.google.com/file/d/1E_43L4efc20xyqfHMVNy-UkQIV5fyaoZ/view?usp=drivesdk" alt="Your Photo" class="profile-pic" />
+    <div class="profile-section">
+      <img src="https://drive.google.com/uc?export=view&id=1E_43L4efc20xyqfHMVNy-UkQIV5fyaoZ" alt="Your Photo" class="profile-pic" />
+      <div class="header-name">MD. Shamsheer Alam</div>
+    </div>
     <div class="quote" id="quote"></div>
   </div>  <div class="button-section">
     <a href="#" class="chapter-button">Chapter 1: Units & Measurements</a>
