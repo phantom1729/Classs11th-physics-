@@ -2,70 +2,103 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Solution Wallah</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Pacifico&display=swap');
+
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: black;
+      background-color: #000;
       color: white;
     }
 
     .top-section {
-      background: linear-gradient(to right, #001f3f, #0074D9);
-      padding: 20px;
+      background: linear-gradient(135deg, #001f3f, #005f73);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      height: auto;
+      padding: 1em 2em;
+      position: relative;
+      overflow: hidden;
+      animation: fadeInTop 2s ease-in-out;
       text-align: center;
     }
 
-    .logo-box {
-      display: inline-block;
-      padding: 10px 30px;
-      font-family: 'Pacifico', cursive;
-      font-size: 30px;
-      font-weight: bold;
-      color: red;
-      background-color: yellow;
-      border-radius: 15px;
-      box-shadow: 0 0 20px 5px yellow;
-      margin-bottom: 15px;
+    @keyframes fadeInTop {
+      from {
+        opacity: 0;
+        transform: translateY(-100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .header-name {
-      font-size: 22px;
+      font-size: 1.2em;
       font-weight: bold;
-      margin-top: 20px;
-      color: #fff;
-      text-shadow: 0 0 10px yellow;
+      color: #ffffff;
+      text-shadow: 0 0 10px #ff0;
+      margin-top: 0.5em;
+    }
+
+    .logo-box {
+      margin: auto;
+      background-color: #333;
+      color: red;
+      padding: 1em 3em;
+      font-size: 2em;
+      font-weight: bold;
+      font-family: 'Orbitron', sans-serif;
+      border-radius: 1em;
+      box-shadow: 0 0 1em yellow, 0 0 1.5em yellow, inset 0 0 1em yellow;
+      text-shadow: 0 0 0.5em yellow;
+      border: 2px solid yellow;
+    }
+
+    .profile-section {
+      text-align: center;
+      margin-top: 1em;
     }
 
     .quote {
-      margin-top: 20px;
-      font-size: 18px;
-      font-style: italic;
-      color: #ffeb3b;
-      animation: fadeIn 1s ease-in-out;
-      min-height: 50px;
+      width: 100%;
+      margin-top: 1em;
+      font-size: 1.1em;
+      text-align: center;
+      animation: fadeInQuotes 3s ease-in-out;
+      font-family: 'Orbitron', sans-serif;
     }
 
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
+    @keyframes fadeInQuotes {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    .chapter-section {
-      background-color: black;
-      padding: 20px;
+    .button-section {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 15px;
+      background-color: black;
+      padding: 2em;
+      gap: 1em;
     }
 
     .chapter-button {
       --glow-color: rgb(217, 176, 255);
       --glow-spread-color: rgba(191, 123, 255, 0.781);
+      --enhanced-glow-color: rgb(231, 206, 255);
       --btn-color: rgb(100, 61, 136);
 
       border: 0.25em solid var(--glow-color);
@@ -76,9 +109,13 @@
       cursor: pointer;
       background-color: var(--btn-color);
       border-radius: 1em;
-      box-shadow: 0 0 1em 0.25em var(--glow-color), 0 0 4em 1em var(--glow-spread-color), inset 0 0 0.75em 0.25em var(--glow-color);
-      text-shadow: 0 0 0.5em var(--glow-color);
+      outline: none;
       text-decoration: none;
+      box-shadow: 0 0 1em 0.25em var(--glow-color),
+                  0 0 1em var(--glow-spread-color),
+                  inset 0 0 0.74em 0.25em var(--glow-color);
+      text-shadow: 0 0 0.5em var(--glow-color);
+      position: relative;
       transition: all 0.3s;
     }
 
@@ -87,46 +124,51 @@
       background-color: var(--glow-color);
     }
 
-    .footer {
+    footer {
+      margin-top: 2em;
+      padding: 1em;
       text-align: center;
-      padding: 15px;
+      color: white;
+      font-size: 1em;
       font-weight: bold;
-      color: #fff;
-      text-shadow: 0 0 10px red, 0 0 20px yellow, 0 0 30px orange;
-      font-size: 18px;
+      font-family: 'Orbitron', sans-serif;
+      text-shadow: 0 0 5px #ff0, 0 0 15px #ff0, 0 0 25px #ff0, 0 0 35px #ff0;
     }
 
-    @media screen and (max-width: 768px) {
-      .chapter-button {
-        font-size: 13px;
-        padding: 0.8em 1.2em;
+    @media (max-width: 768px) {
+      .top-section {
+        flex-direction: column;
+        padding: 1em;
       }
 
       .logo-box {
-        font-size: 22px;
-        padding: 8px 20px;
+        font-size: 1.5em;
+        padding: 0.5em 1.5em;
       }
 
-      .header-name {
-        font-size: 18px;
+      .chapter-button {
+        font-size: 0.9em;
+        padding: 0.8em 1.5em;
       }
     }
   </style>
 </head>
 <body>
-
   <div class="top-section">
     <div class="logo-box">Solution Wallah</div>
-    <div class="header-name">MD. Shamsheer Alam</div>
+    <div class="profile-section">
+      <!-- Image removed as requested -->
+      <div class="header-name">MD. Shamsheer Alam</div>
+    </div>
     <div class="quote" id="quote"></div>
   </div>
 
-  <div class="chapter-section">
+  <div class="button-section">
     <a href="#" class="chapter-button">Chapter 1: Units & Measurements</a>
     <a href="#" class="chapter-button">Chapter 2: Motion in Straight Line</a>
     <a href="#" class="chapter-button">Chapter 3: Motion in a Plane</a>
     <a href="#" class="chapter-button">Chapter 4: Laws of Motion</a>
-    <a href="#" class="chapter-button">Chapter 5: Work, Energy & Power</a>
+    <a href="#" class="chapter-button">Chapter 5: Work, Energy and Power</a>
     <a href="#" class="chapter-button">Chapter 6: System of Particles</a>
     <a href="#" class="chapter-button">Chapter 7: Rotational Motion</a>
     <a href="#" class="chapter-button">Chapter 8: Gravitation</a>
@@ -135,43 +177,39 @@
     <a href="#" class="chapter-button">Chapter 11: Thermal Properties of Matter</a>
     <a href="#" class="chapter-button">Chapter 12: Thermodynamics</a>
     <a href="#" class="chapter-button">Chapter 13: Kinetic Theory</a>
-    <a href="#" class="chapter-button">Chapter 14: Oscillations & Waves</a>
+    <a href="#" class="chapter-button">Chapter 14: Oscillations</a>
   </div>
 
-  <div class="footer">Made by :- Aryan Patel</div>
+  <footer>Made by :- Aryan Patel</footer>
 
   <script>
     const quotes = [
-      "Success doesn’t come to you, you go to it.",
+      "Believe in yourself. You are braver than you think.",
+      "Success is no accident. It is hard work and perseverance.",
       "Push yourself, because no one else is going to do it for you.",
       "Great things never come from comfort zones.",
       "Dream it. Wish it. Do it.",
-      "Don’t watch the clock; do what it does. Keep going.",
-      "Believe you can and you're halfway there.",
-      "Do something today that your future self will thank you for.",
-      "The secret of getting ahead is getting started.",
+      "Don’t stop when you’re tired. Stop when you’re done.",
+      "Wake up with determination. Go to bed with satisfaction.",
       "Little things make big days.",
-      "It always seems impossible until it is done.",
+      "It's going to be hard, but hard does not mean impossible.",
+      "Success doesn’t just find you. You have to go out and get it."
     ];
 
-    while(quotes.length < 99) {
-      quotes.push(`Motivational Quote #${quotes.length + 1}`);
+    while (quotes.length < 99) {
+      quotes.push("Stay motivated. Keep pushing. Never give up.");
     }
 
-    let idx = 0;
-    const quoteEl = document.getElementById('quote');
+    let current = 0;
+    const quoteEl = document.getElementById("quote");
 
     function showQuote() {
-      quoteEl.textContent = quotes[idx];
-      quoteEl.style.animation = 'none';
-      void quoteEl.offsetWidth;
-      quoteEl.style.animation = null;
-      idx = (idx + 1) % quotes.length;
+      quoteEl.textContent = quotes[current];
+      current = (current + 1) % quotes.length;
     }
 
-    setInterval(showQuote, 4000);
     showQuote();
+    setInterval(showQuote, 4000);
   </script>
-
 </body>
 </html>
