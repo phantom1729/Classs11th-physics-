@@ -1,167 +1,166 @@
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Solution Wallah</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Pacifico&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Pacifico&display=swap');body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000;
+  color: white;
+}
 
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #000;
-      color: white;
-    }
+.top-section {
+  background: linear-gradient(135deg, #001f3f, #005f73);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  height: auto;
+  padding: 1em 2em;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInTop 2s ease-in-out;
+  text-align: center;
+}
 
-    .top-section {
-      background: linear-gradient(135deg, #001f3f, #005f73);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      height: auto;
-      padding: 1em 2em;
-      position: relative;
-      overflow: hidden;
-      animation: fadeInTop 2s ease-in-out;
-      text-align: center;
-    }
+@keyframes fadeInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    @keyframes fadeInTop {
-      from {
-        opacity: 0;
-        transform: translateY(-100px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+.header-name {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 0 10px #ff0;
+}
 
-    .header-name {
-      position: absolute;
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 1.2em;
-      font-weight: bold;
-      color: #ffffff;
-      text-shadow: 0 0 10px #ff0;
-    }
+.logo-box {
+  margin: auto;
+  background-color: #333;
+  color: red;
+  padding: 1em 3em;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+  border-radius: 1em;
+  box-shadow: 0 0 1em yellow, 0 0 1.5em yellow, inset 0 0 1em yellow;
+  text-shadow: 0 0 0.5em yellow;
+  border: 2px solid yellow;
+}
 
-    .logo-box {
-      margin: auto;
-      background-color: rgb(100, 61, 136);
-      color: rgb(217, 176, 255);
-      border: 0.25em solid rgb(217, 176, 255);
-      padding: 1em 3em;
-      font-size: 2em;
-      font-weight: bold;
-      font-family: 'Orbitron', sans-serif;
-      border-radius: 1em;
-      box-shadow: 0 0 1em 0.25em rgb(217, 176, 255),
-                  0 0 2em rgba(191, 123, 255, 0.781),
-                  inset 0 0 0.74em 0.25em rgb(217, 176, 255);
-      text-shadow: 0 0 0.5em rgb(217, 176, 255);
-    }
+.profile-pic {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 3px solid white;
+  object-fit: cover;
+  box-shadow: 0 0 15px white;
+  margin-top: 1em;
+}
 
-    .profile-pic {
-      height: 100px;
-      width: 100px;
-      border-radius: 50%;
-      border: 3px solid white;
-      object-fit: cover;
-      box-shadow: 0 0 15px white;
-      margin-top: 1em;
-    }
+.quote {
+  width: 100%;
+  margin-top: 1em;
+  font-size: 1.1em;
+  text-align: center;
+  animation: fadeInQuotes 3s ease-in-out;
+  font-family: 'Orbitron', sans-serif;
+}
 
-    .quote {
-      width: 100%;
-      margin-top: 1em;
-      font-size: 1.1em;
-      text-align: center;
-      animation: fadeInQuotes 3s ease-in-out;
-      font-family: 'Orbitron', sans-serif;
-    }
+@keyframes fadeInQuotes {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    @keyframes fadeInQuotes {
-      from {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+.button-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: black;
+  padding: 2em;
+  gap: 1em;
+}
 
-    .button-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      background-color: black;
-      padding: 2em;
-      gap: 1em;
-    }
+.chapter-button {
+  --glow-color: rgb(217, 176, 255);
+  --glow-spread-color: rgba(191, 123, 255, 0.781);
+  --enhanced-glow-color: rgb(231, 206, 255);
+  --btn-color: rgb(100, 61, 136);
 
-    .chapter-button {
-      --glow-color: rgb(217, 176, 255);
-      --glow-spread-color: rgba(191, 123, 255, 0.781);
-      --enhanced-glow-color: rgb(231, 206, 255);
-      --btn-color: rgb(100, 61, 136);
+  border: 0.25em solid var(--glow-color);
+  padding: 1em 2em;
+  color: var(--glow-color);
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  text-decoration: none;
+  box-shadow: 0 0 1em 0.25em var(--glow-color),
+              0 0 1em var(--glow-spread-color),
+              inset 0 0 0.74em 0.25em var(--glow-color);
+  text-shadow: 0 0 0.5em var(--glow-color);
+  position: relative;
+  transition: all 0.3s;
+}
 
-      border: 0.25em solid var(--glow-color);
-      padding: 1em 2em;
-      color: var(--glow-color);
-      font-size: 15px;
-      font-weight: bold;
-      cursor: pointer;
-      background-color: var(--btn-color);
-      border-radius: 1em;
-      outline: none;
-      text-decoration: none;
-      box-shadow: 0 0 1em 0.25em var(--glow-color),
-                  0 0 1em var(--glow-spread-color),
-                  inset 0 0 0.74em 0.25em var(--glow-color);
-      text-shadow: 0 0 0.5em var(--glow-color);
-      position: relative;
-      transition: all 0.3s;
-    }
+.chapter-button:hover {
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+}
 
-    .chapter-button:hover {
-      color: var(--btn-color);
-      background-color: var(--glow-color);
-    }
+footer {
+  margin-top: 2em;
+  padding: 1em;
+  text-align: center;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 5px #ff0, 0 0 15px #ff0, 0 0 25px #ff0, 0 0 35px #ff0;
+}
 
-    footer {
-      margin-top: 2em;
-      padding: 1em;
-      text-align: center;
-      color: white;
-      font-size: 1em;
-      text-shadow: 0 0 5px #ff0, 0 0 10px #f0f, 0 0 15px #0ff;
-    }
+@media (max-width: 768px) {
+  .top-section {
+    flex-direction: column;
+    padding: 1em;
+  }
 
-    @media (max-width: 768px) {
-      .top-section {
-        flex-direction: column;
-        padding: 1em;
-      }
+  .logo-box {
+    font-size: 1.5em;
+    padding: 0.5em 1.5em;
+  }
 
-      .logo-box {
-        font-size: 1.5em;
-        padding: 0.5em 1.5em;
-      }
+  .chapter-button {
+    font-size: 0.9em;
+    padding: 0.8em 1.5em;
+  }
 
-      .chapter-button {
-        font-size: 0.9em;
-        padding: 0.8em 1.5em;
-      }
+  .profile-pic {
+    margin-top: 1em;
+  }
+}
 
-      .profile-pic {
-        margin-top: 1em;
-      }
-    }
   </style>
 </head>
 <body>
@@ -170,9 +169,7 @@
     <div class="logo-box">Solution Wallah</div>
     <img src="your-photo.jpg" alt="Your Photo" class="profile-pic" />
     <div class="quote" id="quote"></div>
-  </div>
-
-  <div class="button-section">
+  </div>  <div class="button-section">
     <a href="#" class="chapter-button">Chapter 1: Units & Measurements</a>
     <a href="#" class="chapter-button">Chapter 2: Motion in Straight Line</a>
     <a href="#" class="chapter-button">Chapter 3: Motion in a Plane</a>
@@ -187,11 +184,7 @@
     <a href="#" class="chapter-button">Chapter 12: Thermodynamics</a>
     <a href="#" class="chapter-button">Chapter 13: Kinetic Theory</a>
     <a href="#" class="chapter-button">Chapter 14: Oscillations</a>
-  </div>
-
-  <footer>Made by :- Aryan Patel</footer>
-
-  <script>
+  </div>  <footer>Made by :- Aryan Patel</footer>  <script>
     const quotes = [
       "Believe in yourself. You are braver than you think.",
       "Success is no accident. It is hard work and perseverance.",
@@ -219,6 +212,5 @@
 
     showQuote();
     setInterval(showQuote, 4000);
-  </script>
-</body>
+  </script></body>
 </html>
