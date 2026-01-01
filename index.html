@@ -3,176 +3,160 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Solution Wallah</title>
+  <title>Solution Wallah | Official PW Theme</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Pacifico&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@700&display=swap');
+
+    :root {
+      --pw-violet: #140D52;   /* Official Violent Violet */
+      --pw-red: #B03B32;      /* Official Medium Carmine */
+      --pw-peach: #FFD2B3;    /* Official Romantic Accent */
+      --pw-bg: #F8F9FB;       /* Light Neutral Background */
+      --pw-text: #1A1A1A;
+    }
 
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #000014;
-      color: #cce6ff;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--pw-bg);
+      color: var(--pw-text);
     }
 
+    /* Header Section */
     .top-section {
-      background: linear-gradient(135deg, #001a66, #004080);
+      background: var(--pw-violet);
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
-      flex-wrap: wrap;
-      height: auto;
-      padding: 1em 2em;
-      position: relative;
-      overflow: hidden;
-      animation: fadeInTop 2s ease-in-out;
-      text-align: center;
-    }
-
-    @keyframes fadeInTop {
-      from {
-        opacity: 0;
-        transform: translateY(-100px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .header-name {
-      font-size: 1.2em;
-      font-weight: bold;
-      color: #99ccff;
-      text-shadow: 0 0 10px #3399ff;
-      margin-top: 0.5em;
+      padding: 2.5em 1em;
+      color: white;
+      clip-path: ellipse(120% 100% at 50% 0%); /* Curved bottom like apps */
+      box-shadow: 0 10px 30px rgba(20, 13, 82, 0.2);
     }
 
     .logo-box {
-      margin: auto;
-      background-color: #001a4d;
-      color: #66b3ff;
-      padding: 1em 3em;
-      font-size: 2em;
+      background-color: white;
+      color: var(--pw-violet);
+      padding: 0.6em 1.8em;
+      font-size: 2.2em;
       font-weight: bold;
       font-family: 'Orbitron', sans-serif;
-      border-radius: 1em;
-      box-shadow: 0 0 1.5em #3399ff, 0 0 2em #66b3ff, inset 0 0 1.5em #3399ff;
-      text-shadow: 0 0 0.7em #66b3ff;
-      border: 2px solid #3399ff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      border: 3px solid var(--pw-peach);
     }
 
-    .profile-section {
-      text-align: center;
-      margin-top: 1em;
+    .header-name {
+      font-size: 1.3em;
+      font-weight: 600;
+      color: var(--pw-peach);
+      margin-top: 15px;
+      letter-spacing: 1px;
     }
 
     .quote {
-      width: 100%;
-      margin-top: 1em;
+      margin-top: 1.5em;
       font-size: 1.1em;
+      font-style: italic;
+      color: white;
+      max-width: 600px;
+      min-height: 1.5em;
       text-align: center;
-      animation: fadeInQuotes 3s ease-in-out;
-      font-family: 'Orbitron', sans-serif;
-      color: #99ccff;
-      text-shadow: 0 0 8px #3399ff;
+      opacity: 0.9;
     }
 
-    @keyframes fadeInQuotes {
-      from {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
+    /* Buttons/Cards Section */
     .button-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      background-color: #000022;
-      padding: 2em;
-      gap: 1em;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5em;
+      padding: 4em 2em;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .chapter-button {
-      --glow-color: #3399ff;
-      --glow-spread-color: rgba(51, 153, 255, 0.7);
-      --enhanced-glow-color: #66b3ff;
-      --btn-color: #003366;
-
-      border: 0.25em solid var(--glow-color);
-      padding: 1em 2em;
-      color: var(--glow-color);
-      font-size: 15px;
-      font-weight: bold;
-      cursor: pointer;
-      background-color: var(--btn-color);
-      border-radius: 1em;
-      outline: none;
+      background: white;
+      border: 2px solid #EEE;
+      padding: 1.5em;
+      color: var(--pw-violet);
+      font-size: 1.1em;
+      font-weight: 700;
       text-decoration: none;
-      box-shadow: 0 0 1.2em 0.3em var(--glow-color),
-                  0 0 1.5em var(--glow-spread-color),
-                  inset 0 0 1em 0.3em var(--glow-color);
-      text-shadow: 0 0 0.6em var(--glow-color);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
       position: relative;
-      transition: all 0.3s;
+    }
+
+    /* Red Accent Dot/Icon */
+    .chapter-button::before {
+      content: '▶';
+      margin-right: 15px;
+      color: var(--pw-red);
+      font-size: 0.8em;
     }
 
     .chapter-button:hover {
-      color: var(--btn-color);
-      background-color: var(--glow-color);
-      box-shadow: 0 0 2em 0.5em var(--enhanced-glow-color),
-                  0 0 2.5em var(--glow-spread-color),
-                  inset 0 0 1.5em 0.5em var(--enhanced-glow-color);
-      text-shadow: none;
+      transform: scale(1.03);
+      border-color: var(--pw-red);
+      background-color: #FFF9F9;
+      box-shadow: 0 15px 30px rgba(176, 59, 50, 0.15);
+    }
+
+    /* Specific badge for chapters */
+    .chapter-badge {
+      position: absolute;
+      top: -10px;
+      right: 20px;
+      background: var(--pw-red);
+      color: white;
+      font-size: 0.7em;
+      padding: 2px 12px;
+      border-radius: 10px;
+      text-transform: uppercase;
     }
 
     footer {
-      margin-top: 2em;
-      padding: 1em;
+      margin-top: 5em;
+      padding: 2.5em;
       text-align: center;
-      color: #99ccff;
-      font-size: 1em;
-      font-weight: bold;
-      font-family: 'Orbitron', sans-serif;
-      text-shadow: 0 0 8px #3399ff, 0 0 15px #3399ff, 0 0 25px #66b3ff, 0 0 35px #66b3ff;
-      background-color: #000022;
-      border-top: 1px solid #3399ff;
+      color: white;
+      font-weight: 600;
+      background-color: var(--pw-violet);
+      border-top: 5px solid var(--pw-red);
     }
 
-    @media (max-width: 768px) {
-      .top-section {
-        flex-direction: column;
-        padding: 1em;
-      }
+    footer span {
+      color: var(--pw-red);
+      font-size: 1.2em;
+    }
 
-      .logo-box {
-        font-size: 1.5em;
-        padding: 0.5em 1.5em;
+    /* Mobile Tweaks */
+    @media (max-width: 600px) {
+      .button-section {
+        grid-template-columns: 1fr;
+        padding: 2em 1em;
       }
-
-      .chapter-button {
-        font-size: 0.9em;
-        padding: 0.8em 1.5em;
-      }
+      .logo-box { font-size: 1.6em; }
     }
   </style>
 </head>
 <body>
+
   <div class="top-section">
     <div class="logo-box">Solution Wallah</div>
-    <div class="profile-section">
-      <!-- Image removed as requested -->
-      <div class="header-name">MD. Shamsheer Alam</div>
-    </div>
+    <div class="header-name">MD. SHAMSHEER ALAM</div>
     <div class="quote" id="quote"></div>
   </div>
 
   <div class="button-section">
-    <a href="https://phantom1729.github.io/Chaptee1/" class="chapter-button">Chapter 1: Units & Measurements</a>
+    <a href="https://phantom1729.github.io/Chaptee1/" class="chapter-button">
+      <span class="chapter-badge">Live</span>
+      Chapter 1: Units & Measurements
+    </a>
     <a href="#" class="chapter-button">Chapter 2: Motion in Straight Line</a>
     <a href="#" class="chapter-button">Chapter 3: Motion in a Plane</a>
     <a href="#" class="chapter-button">Chapter 4: Laws of Motion</a>
@@ -188,7 +172,7 @@
     <a href="#" class="chapter-button">Chapter 14: Oscillations</a>
   </div>
 
-  <footer>Made by :-♥️shamshher sir♥️</footer>
+  <footer>Made with <span>♥</span> by Shamsheer Sir</footer>
 
   <script>
     const quotes = [
@@ -196,30 +180,26 @@
       "Success is no accident. It is hard work and perseverance.",
       "Push yourself, because no one else is going to do it for you.",
       "Great things never come from comfort zones.",
-      "Dream it. Wish it. Do it.",
-      "Don’t stop when you’re tired. Stop when you’re done.",
-      "Wake up with determination. Go to bed with satisfaction.",
-      "Little things make big days.",
-      "keep a girl (girlfriend) study at least for her it will be a motivation.",
-      "kyu nhi ho rahi phadhi.",
+      "Kyu nahi ho rahi padhai?",
       "It's going to be hard, but hard does not mean impossible.",
-      "Success doesn’t just find you. You have to go out and get it."
+      "Ab mehnat nahi karoge toh kab karoge?"
     ];
-
-    while (quotes.length < 99) {
-      quotes.push("Stay motivated. Keep pushing. Never give up.");
-    }
 
     let current = 0;
     const quoteEl = document.getElementById("quote");
 
     function showQuote() {
-      quoteEl.textContent = quotes[current];
-      current = (current + 1) % quotes.length;
+      quoteEl.style.opacity = 0;
+      setTimeout(() => {
+        quoteEl.textContent = `"${quotes[current]}"`;
+        quoteEl.style.opacity = 1;
+        current = (current + 1) % quotes.length;
+      }, 500);
     }
 
+    quoteEl.style.transition = "opacity 0.5s";
     showQuote();
-    setInterval(showQuote, 4000);
+    setInterval(showQuote, 4500);
   </script>
 </body>
 </html>
